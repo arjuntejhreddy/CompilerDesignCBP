@@ -1,0 +1,125 @@
+/* FlowCode Design System & Stylesheet */
+
+@import "@xyflow/react/dist/style.css";
+
+:root {
+  --bg-primary: #0b0f17;
+  --bg-secondary: #111827;
+  --bg-tertiary: #1e293b;
+  --bg-card: #151d2e;
+  --border-color: #27354a;
+  --border-subtle: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --accent-blue: #38bdf8;
+  --accent-cyan: #06b6d4;
+  --accent-green: #10b981;
+  --accent-amber: #f59e0b;
+  --accent-rose: #f43f5e;
+  --accent-purple: #a855f7;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Button & Badge Utilities */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.code-font {
+  font-family: var(--font-mono);
+}
+
+/* React Flow Node Styling */
+.flow-node {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  min-width: 140px;
+  text-align: center;
+}
+.flow-node:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+.flow-node-terminal {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border: 2px solid var(--accent-purple);
+  border-radius: 24px;
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.flow-node-process {
+  background: linear-gradient(135deg, #1e293b, #151d2e);
+  border: 2px solid var(--accent-blue);
+  color: #f1f5f9;
+}
+
+.flow-node-decision {
+  background: linear-gradient(135deg, #2d1e3d, #1a1625);
+  border: 2px solid var(--accent-amber);
+  transform: rotate(0deg);
+  border-radius: 12px;
+  color: #fef08a;
+  font-weight: 500;
+}
+
+.flow-node-connector {
+  background: #334155;
+  border: 2px solid #64748b;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+/* Tab Active Indicators */
+.tab-active {
+  border-bottom: 2px solid var(--accent-blue);
+  color: var(--accent-blue) !important;
+  background-color: rgba(56, 189, 248, 0.08);
+}
